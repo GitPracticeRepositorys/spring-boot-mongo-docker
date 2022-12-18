@@ -34,6 +34,7 @@ node{
 	 
 	  
       stage("Deploy To Kuberates Cluster"){
+	KubeConfig(caCertificate: '', clusterName: 'education-eks-a4qkyuqc', contextName: '', credentialsId: 'KubeConfig', namespace: '', serverUrl: '')      
         sh 'kubectl apply -f springBootMongo.yml'
       } 
      
