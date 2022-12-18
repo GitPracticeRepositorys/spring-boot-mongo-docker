@@ -1,4 +1,4 @@
-node1{
+node{
      
     stage('SCM Checkout'){
         git credentialsId: 'githubcredentials', url: 'https://github.com/GitPracticeRepositorys/spring-boot-mongo-docker.git',branch: 'master'
