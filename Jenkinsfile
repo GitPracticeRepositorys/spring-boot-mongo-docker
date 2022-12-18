@@ -23,20 +23,19 @@ node{
         sh 'docker push shivakrishna99/spring-boot-mongo'
      }
      
-	 /**
+	 
      stage("Deploy To Kuberates Cluster"){
        kubernetesDeploy(
          configs: 'springBootMongo.yml', 
-         kubeconfigId: 'KUBERNATES_CONFIG',
+         kubeconfigId: 'KubeConfig',
          enableConfigSubstitution: true
         )
-     }  **/
+     }  
 	 
-	  
-      stage("Deploy To Kuberates Cluster"){
-	KubeConfig(caCertificate: '', clusterName: 'education-eks-a4qkyuqc', contextName: '', credentialsId: 'KubeConfig', namespace: '', serverUrl: '')      
+	 /** 
+      stage("Deploy To Kuberates Cluster"){      
         sh 'kubectl apply -f springBootMongo.yml'
-      } 
+      } **/
      
 }
 
