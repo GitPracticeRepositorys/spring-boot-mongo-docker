@@ -33,8 +33,9 @@ node{
      }  **/
 	 
 	  
-      stage("Deploy To Kuberates Cluster"){      
-        sh 'kubectl apply -f springBootMongo.yml'
+      stage("Deploy To Kuberates Cluster"){
+	  withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'KUBERNETES_CONFIG', namespace: '', serverUrl: '') {    
+            sh 'kubectl apply -f springBootMongo.yml'
       } 
      
 }
